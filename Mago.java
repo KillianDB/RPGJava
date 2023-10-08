@@ -17,8 +17,44 @@ vida = this.resistencia*10;
 magia = this.inteligencia*10;
 }
 
-public String toString(){
-return nome;
+public void setNome(String nome) {
+    this.nome = nome;
+}
+
+public void setResistencia(int resistencia) {
+    this.resistencia = resistencia;
+}
+
+public void setForca(int forca) {
+    this.forca = forca;
+}
+
+public void setInteligencia(int inteligencia) {
+    this.inteligencia = inteligencia;
+}
+
+public String getNome() {
+    return nome;
+}
+
+public int getResistencia() {
+    return resistencia;
+}
+
+public int getForca() {
+    return forca;
+}
+
+public int getInteligencia() {
+    return inteligencia;
+}
+
+public int getVida() {
+    return vida;
+}
+
+public int getMagia() {
+    return magia;
 }
 
 public int atacar(int n){
@@ -45,6 +81,12 @@ public String receberDano(int dano){
 public int bolaDeFogo(int n){
     this.magia=magia-10;
     return this.inteligencia*n;
+}
+
+public String energiaRefletora(int dano){
+    this.vida=vida+((dano/3)*2);
+    this.n=dano;
+    return nome+" usou Energia Refletora, recuperando 66% da vida perdida nessa rodada e concedendo a si o mesmo o dano aplicado nessa rodada.";
 }
 
 }
